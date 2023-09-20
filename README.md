@@ -13,11 +13,21 @@ Instructions on how to setup a Seeed Studio ReTerminal DM with Ignition Edge Pan
 
 From an SSH console into your ReTerminal:
 
-Get the ignition edge download/install script. This downloads the Ignition Edge package, extracts it to the proper locations and sets it to launch on boot.
-`curl -o download-ignition-edge.sh https://raw.githubusercontent.com/tulsasoftware/reterminal-ignition-edge-panel/main/download-ignition-edge.sh`
-
-Once you've downloaded the script, mark it as executable and run it. You will need superuser credentials in order to create the necessary directories. Go grab a coffee, this will take a few minutes to install.
-`sudo chmod +x ./download-ignition-edge.sh`
-`sudo ./download-ignition-edge.sh`
+Get the ignition edge download/install script. This downloads the Ignition Edge package, extracts it to the proper locations and sets it to launch on boot. Once you've downloaded the script, mark it as executable and run it. You will need superuser credentials in order to create the necessary directories. Go ahead and grab a coffee, this will take a few minutes to install.
+```bash
+curl -o download-ignition-edge.sh https://raw.githubusercontent.com/tulsasoftware/reterminal-ignition-edge-panel/main/download-ignition-edge.sh
+sudo chmod +x ./download-ignition-edge.sh
+sudo ./download-ignition-edge.sh
+```
 
 When the installation is complete there will be a notice to reboot the ReTerminal in order for the service to run. Reboot the device and when it is back online you can easily tell if the service is running if you can load the Ignition Edge license agreement page when you use a web browser either on the ReTerminal at `localhost:8088` OR another device on the network at `{reterminalhostname}:8088`.
+![ignition edge eula page](./ignition-edge-eula-screenshot.png)
+
+# Uninstalling
+
+If you wish to uninstall the package (as installed by the installer script), simply download and execute the uninstall script.
+```bash
+curl -o uninstall-ignition-edge.sh https://raw.githubusercontent.com/tulsasoftware/reterminal-ignition-edge-panel/main/uninstall-ignition-edge.sh
+sudo chmod +x ./uninstall-ignition-edge.sh
+sudo ./uninstall-ignition-edge.sh
+```
