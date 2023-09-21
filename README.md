@@ -54,3 +54,15 @@ Ignition Edge products requires a license for full usage in production. However,
 To get a license for the product, you will need to either reach out to an Inductive Automation sales representative or you can purchase your own on the [Inductive Automation Ignition pricing](https://inductiveautomation.com/pricing/ignition) page.
 
 To enter the license, simply follow the green banner prompting you to activate ignition. Ensure your edge device has internet connectivity and enter the 6 or 8 character string and the device will take a few seconds to activate.
+
+# Perspective Vs Vision
+Ignition offers two panel builder softwares and it is a common question to decide which one to use. There is a lot of overlap in functionality between the two, but there are a couple key deciding factors to make the decision.
+
+### Will your users be mobile-first? Choose Perspective.
+If you wish to use iOS or Android native packages such as location services, or cameras you will only have access to these features through Perspective.
+
+### Do you want to feel more native than a web browser? Choose Vision.
+If you want to avoid the feel of many modern web apps (like Google Drive, Outlook for web, Zoom for web, etc) and fully immerse your user experience, then you should choose Vision.
+
+### Will your users multi-task on this device? Choose Perspective
+Perspective is a javascript-based tech stack and relies on a web browser to display the application. Vision is a Java-based application and was originally built for dedicated HMI panels and makes assumptions that the host machine will be wholly dedicated to your application. If your user will sometimes want to minimize the web browser to use another application on the operating system, you should choose Perspective.
