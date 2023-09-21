@@ -68,6 +68,9 @@ If you want to avoid the feel of many modern web apps (like Google Drive, Outloo
 Perspective is a javascript-based tech stack and relies on a web browser to display the application. Vision is a Java-based application and was originally built for dedicated HMI panels and makes assumptions that the host machine will be wholly dedicated to your application. If your user will sometimes want to minimize the web browser to use another application on the operating system, you should choose Perspective.
 
 # Creating a Hello World View With Panel Designer
+
+To verify everything is setup properly we will create a 'hello world' perspective project and view it on the gateway using a web browser.
+
 On the gateway's home screen there is a button to download the Designer Launcher. Begin by downloading and executing this installer. It will detect your operating system and install an app on your machine with a very basic installer. After the installation is complete, it will prompt whether you would like to import your setting from the gateway - click **yes**.
 
 Launch the newly installed Ignition Designer Launcher, it should show the connection to your device. Click on your device and and then click the 'open designer' button that is now enabled in the bottom corner.
@@ -75,8 +78,6 @@ Launch the newly installed Ignition Designer Launcher, it should show the connec
 
 You should now see a login prompt appear. Enter your Ignition admin credentials that were entered during the setup of your Edge Gateway.
 ![Ignition Designer login](./media/ignition-designer-login.png)
-
-To verify everything is setup properly we will create a 'hello world' perspective project and view it on the gateway.
 
 1. In the left column, expand 'Perspectives' and right click on the 'Views'
 2. Create a new view and give it a name 'hello-world'
