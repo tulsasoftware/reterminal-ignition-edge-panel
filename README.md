@@ -66,3 +66,27 @@ If you want to avoid the feel of many modern web apps (like Google Drive, Outloo
 
 ### Will your users multi-task on this device? Choose Perspective
 Perspective is a javascript-based tech stack and relies on a web browser to display the application. Vision is a Java-based application and was originally built for dedicated HMI panels and makes assumptions that the host machine will be wholly dedicated to your application. If your user will sometimes want to minimize the web browser to use another application on the operating system, you should choose Perspective.
+
+# Creating a Hello World View With Panel Designer
+On the gateway's home screen there is a button to download the Designer Launcher. Begin by downloading and executing this installer. It will detect your operating system and install an app on your machine with a very basic installer. After the installation is complete, it will prompt whether you would like to import your setting from the gateway - click **yes**.
+
+Launch the newly installed Ignition Designer Launcher, it should show the connection to your device. Click on your device and and then click the 'open designer' button that is now enabled in the bottom corner.
+![Ignition Designer Launcher](./media/ignition-designer-launcher.png)
+
+You should now see a login prompt appear. Enter your Ignition admin credentials that were entered during the setup of your Edge Gateway.
+![Ignition Designer login](./media/ignition-designer-login.png)
+
+To verify everything is setup properly we will create a 'hello world' perspective project and view it on the gateway.
+
+1. In the left column, expand 'Perspectives' and right click on the 'Views'
+2. Create a new view and give it a name 'hello-world'
+3. Find the components pallete, which is sometimes in a hidden tab container on your right. Search for a 'label' and drag it onto the canvas.
+4. Double click on the label and change your text to 'hello world'
+5. Save the file and in the top menu bar navigate to File -> Update Project to publish the updated project (aka 'Perspective session') to the gateway.
+
+![Ignition Panel Designer Create Perspective](./media/ignition-panel-create-helloworld.gif)
+
+Now that you've updated your Perspective session, it is live and you can navigate to it with a web browser! 
+To get help finding the URL for the view we just created, you can return to the Edge Gateway Launcher and view the active Perspective sessions. This will launch a browser on your session's home page URL.
+
+![Ignition Panel View Hello World](./media/ignition-panel-view-helloworld.gif)
