@@ -47,3 +47,10 @@ After you have a user, you will be asked if you would like to change any of the 
 You are now ready to initialize and launch the service! This takes a couple minutes to setup and does not require any interaction so you are free to check back later. It will redirect to the designer home page when it is complete and you are free to begin work!
 
 ![Start gateway page](./media/ignition-edge-launch-screen.png)
+
+# Licensing
+Ignition Edge products requires a license for full usage in production. However, there is a trial version of the product available which has full feature support, but will clear its data every two hours. This series will not require activation of any products, although it may cause some interruption for you during the series depending on the pace you are working at while following along.
+
+To get a license for the product, you will need to either reach out to an Inductive Automation sales representative or you can purchase your own on the [Inductive Automation Ignition pricing](https://inductiveautomation.com/pricing/ignition) page.
+
+To enter the license, simply follow the green banner prompting you to activate ignition. Ensure your edge device has internet connectivity and enter the 6 or 8 character string and the device will take a few seconds to activate.
