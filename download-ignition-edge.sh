@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "downloading and installing ignition edge..."
 echo "creating folder structures..."
 sudo mkdir /opt/ignitionedge/
 cd /opt/ignitionedge/
@@ -24,4 +24,4 @@ echo "(/opt/ignitionedge/ignition.sh start)"
 echo "cleaning up temporary files..."
 rm ./ignition-edge-linux-aarch64.zip
 
-echo "done! reboot the system to start the service"
+echo "installation complete."
