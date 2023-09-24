@@ -17,8 +17,8 @@ sudo unzip ./ignition-edge-linux-aarch64.zip
 echo "setting file permissions..."
 sudo chmod +x ignition.sh ignition-gateway ignition-util.sh
 
-echo "configuring ignition edge to launch on startup..."
-echo 'sudo /opt/ignitionedge/ignition.sh start' >> ~/.bashrc
+echo "note: it is suggested to configure ignition edge to launch on startup..."
+echo "(/opt/ignitionedge/ignition.sh start)"
 
 #remove the unextracted blob
 echo "cleaning up temporary files..."

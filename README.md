@@ -9,7 +9,7 @@ Instructions on how to setup a Seeed Studio ReTerminal DM with Ignition Edge Pan
 
 *This guide assumes your reTerminal DM is running a fresh install of Raspberry Pi OS(x64) with SSH access from another client device. See [instructions to flash the ReTerminal DM operating system](https://wiki.seeedstudio.com/reterminal-dm-flash-OS/#steps-for-flashing-raspbian-os) if you require detailed instructions on this procedure.*
 
-# Installing Ignition Edge
+# Installing Ignition Edge On ReTerminal
 
 From an SSH console into your ReTerminal:
 
@@ -30,11 +30,35 @@ sudo chmod +x ./uninstall-ignition-edge.sh
 sudo ./uninstall-ignition-edge.sh
 ```
 
-# Configuring Ignition Edge
+# Launching Ignition Edge Gateway
 
-When the installation is complete there will be a notice to reboot the ReTerminal in order for the service to run. Reboot the device and when it is back online you can easily tell if the service is running if you can load the Ignition Edge license agreement page when you use a web browser either on the ReTerminal at `localhost:8088` OR another device on the network at `{reterminalhostname}:8088`.
+When the installation is complete you will need to start the service. You can [setup the gateway to start on boot](#configuring-ignition-edge-to-launch-on-boot) and perform a reboot of the ReTerminal or you can choose to start the service manually using the command
+ ```bash
+sudo /opt/ignitionedge/ignition.sh start
+```
+
+You can easily check if the service is running if you are able to load the Ignition Edge license agreement page. Launch a web browser either on the ReTerminal itself at `localhost:8088` OR from another device on the network at `{reterminalhostname}:8088` OR from anywhere on the network with IP address of the ReTerminal itself at `{reterminalip}:8088`.
 
 ![ignition edge eula page](./media/ignition-edge-eula-screenshot.png)
+
+## Configuring Ignition Edge To Launch On Boot
+It is recommended to launch the gateway's service automatically on boot of the device. There are multiple ways this can be accomplished and it is ultimately up to the user to decide how to do this.
+
+As an example, you could add the launch command to your `.bashrc`. To do this, simply open your `.bashrc` in a text editor of your choice.
+```bash
+sudo nano ~/.bashrc
+```
+Append the launch command to the the file
+```bash
+/opt/ignitionedge/ignition.sh start'
+```
+![Launch On Boot Setup](./media/ignition-gateway-launch-setup.png)
+And don't forget to save the file! 
+(`ctrl + x` in the example above using nano)
+
+This method does not launch the gateway on save, so reboot the ReTerminal to ensure the script works as expected.
+
+# Configuring Ignition Edge
 
 Configuring the gateway is a straight forward process. Proceed by accepting the EULA and then create a default user / password for Ignition. Remember this information as it will be created with admin credentials and be used for system configuration throughout this series.
 
@@ -74,9 +98,11 @@ To verify everything is setup properly we will create a 'hello world' perspectiv
 On the gateway's home screen there is a button to download the Designer Launcher. Begin by downloading and executing this installer. It will detect your operating system and install an app on your machine with a very basic installer. After the installation is complete, it will prompt whether you would like to import your setting from the gateway - click **yes**.
 
 Launch the newly installed Ignition Designer Launcher, it should show the connection to your device. Click on your device and and then click the 'open designer' button that is now enabled in the bottom corner.
+
 ![Ignition Designer Launcher](./media/ignition-designer-launcher.png)
 
 You should now see a login prompt appear. Enter your Ignition admin credentials that were entered during the setup of your Edge Gateway.
+
 ![Ignition Designer login](./media/ignition-designer-login.png)
 
 1. In the left column, expand 'Perspectives' and right click on the 'Views'
@@ -91,3 +117,6 @@ Now that you've updated your Perspective session, it is live and you can navigat
 To get help finding the URL for the view we just created, you can return to the Edge Gateway Launcher and view the active Perspective sessions. This will launch a browser on your session's home page URL.
 
 ![Ignition Panel View Hello World](./media/ignition-panel-view-helloworld.gif)
+
+# Expanding Your HMI
+You have now setup the basics of Ignition's Perspective module to power the visuals of your ReTerminal. To create more powerful visuals leveraging the full Ignition platform, you will likely need to setup Tag Servers, Historian Databases, etc which are outside the scope of this tutorial. To learn more about the Ignition platform, use their excellent documentation and instructions for free at [Inductive University.](https://inductiveuniversity.com/)
